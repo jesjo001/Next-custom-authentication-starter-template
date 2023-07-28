@@ -1,6 +1,8 @@
+import { ToastContainer } from 'react-toastify'
 import './globals.css'
 import GlobalThemeWrapper from './lib/GlobalThemeWrapper'
 import StyledComponentsRegistry from './lib/register'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const metadata = {
@@ -15,6 +17,18 @@ export default function RootLayout({ children }) {
         <StyledComponentsRegistry>
           <GlobalThemeWrapper>
           {children}
+          <ToastContainer 
+              position="bottom-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
           </GlobalThemeWrapper>
         </StyledComponentsRegistry>
       </body>
